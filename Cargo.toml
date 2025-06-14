@@ -1,0 +1,44 @@
+[package]
+name = "nnn"
+version = "0.1.0"
+edition = "2024"
+
+[build-dependencies]
+cc = "1.2.27"
+pkg-config = "0.3.32"
+
+[features]
+default = []
+
+# Core build options
+debug = []           # O_DEBUG: debug binary
+norl = []           # O_NORL: no readline support
+pcre = []           # O_PCRE: link with PCRE library
+nolc = []           # O_NOLC: no locale support
+nomouse = []        # O_NOMOUSE: no mouse support
+nobatch = []        # O_NOBATCH: no built-in batch renamer
+nofifo = []         # O_NOFIFO: no FIFO previewer support
+ctx8 = []           # O_CTX8: enable 8 contexts
+qsort = []          # O_QSORT: use Alexey Tourbin's QSORT implementation
+bench = []          # O_BENCH: benchmark mode (stops at first user input)
+nossn = []          # O_NOSSN: disable session support
+noug = []           # O_NOUG: disable user, group name in status bar
+nox11 = []          # O_NOX11: disable X11 integration
+matchfltr = []      # O_MATCHFLTR: allow filters without matches
+nosort = []         # O_NOSORT: disable sorting entries on dir load
+static = []         # O_STATIC: static compilation
+
+# Icon support (mutually exclusive)
+icons = []          # O_ICONS: support icons-in-terminal
+nerd = []           # O_NERD: support icons-nerdfont
+emoji = []          # O_EMOJI: support emoji
+
+# User patches
+colemak = []        # O_COLEMAK: change key bindings to colemak compatible layout
+gitstatus = []      # O_GITSTATUS: add git status to detail view
+namefirst = []      # O_NAMEFIRST: print file name first, add uid and guid to detail view
+restorepreview = [] # O_RESTOREPREVIEW: add preview pipe to close and restore preview pane
+
+# Convenience feature combinations
+full = ["pcre", "icons"]
+minimal = ["norl", "nolc", "nomouse", "nobatch", "nofifo", "nossn", "nox11"]

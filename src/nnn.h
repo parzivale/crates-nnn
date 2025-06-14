@@ -291,3 +291,4 @@ static struct key bindings[] = {
 	{ KEY_MOUSE,      SEL_CLICK },
 #endif
 };
+int c_main(int argc, char *argv[]);
